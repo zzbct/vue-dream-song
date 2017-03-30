@@ -1,24 +1,35 @@
 <!-- 首页 -->
 <template>
-    <top :titles="title">
+   <div>
+   	 <topbar :titles='title'>
 		<span class="icon-menu" slot="left"></span>
 		<span class="icon-search" slot="right"></span>
-	</top>
+	 </topbar>
+	 <navbar :navs='navs'></navbar>
+   </div>
 </template>
 <script>
-import top from '../components/topBar'
+import topbar from '../components/topBar'
+import navbar from '../components/navBar'
 export default {
   data () {
   	return {
   	  title: [
 	    {value: "我的",state: "active"},
 	    {value: "发现",state: "lock"},
-	    {value: "动态",state: "active"},
+	    {value: "动态",state: "active"}
+	  ],
+	  navs: [
+	    {value: '个性推荐',state: 'lock'},
+   		{value: '歌单',state: 'active'},
+   		{value: '主播电台',state: 'active'},
+   	    {value: '排行榜',state: 'active'}
 	  ]
   	}
   },
   components: {
-	top
+	topbar,
+	navbar
   }
 }
 </script>

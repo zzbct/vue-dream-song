@@ -1,0 +1,48 @@
+<style lang="less">
+   .tc-navbar {
+   	 height: 2em;
+   	 line-height: 2em;
+   	 padding: 0 0.5em;
+   	 display: flex;
+   	 justify-content: space-around;
+   	 align-items: center;
+   	 color: gray;
+   	 div {
+   	 	flex: 1;
+   	 	height: 100%;
+   	 	text-align: center;
+   	 	font-size: 0.6em;
+   	 }
+   	 &-lock {
+   	 	position: relative;
+   	 	color: #ce3d3e;
+   	 	&:after {
+   	 		content: "";
+   	 		position: absolute;
+   	 		top: 100%;
+   	 		left: 0;
+   	 		width: 100%;
+   	 		height: 0.2em;
+   	 		background-color: #ce3d3e;
+   	 	}
+   	 }
+   }
+</style>
+<template>
+   <div class="tc-navbar">
+   	  <div v-for='item in navs' :class="['tc-navbar-'+item.state]">
+   	     {{item.value}}
+   	  </div>
+   </div>
+</template>
+<script>
+   export default {
+   	 name: 'tc-navbar',
+   	 props: {
+   	   navs: {
+   		 type: Array,
+   		 default: []
+   	   }
+     }
+   }
+</script>
