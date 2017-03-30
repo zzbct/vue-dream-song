@@ -5,7 +5,8 @@
 		<span class="icon-menu" slot="left"></span>
 		<span class="icon-search" slot="right"></span>
 	 </topbar>
-	 <navbar :navs='navs'></navbar>
+	 <navbar :navs="navs"></navbar>
+	 <router-view></router-view>
    </div>
 </template>
 <script>
@@ -19,11 +20,11 @@ export default {
 	    {value: "发现",state: "lock"},
 	    {value: "动态",state: "active"}
 	  ],
-	  navs: [
-	    {value: '个性推荐',state: 'lock'},
-   		{value: '歌单',state: 'active'},
-   		{value: '主播电台',state: 'active'},
-   	    {value: '排行榜',state: 'active'}
+      navs: [
+	    {value: '个性推荐',state: 'lock',name: '/recommend'},
+   		{value: '歌单',state: 'active',name: '/songList'},
+   		{value: '主播电台',state: 'active',name: '/radio'},
+   	    {value: '排行榜',state: 'active',name: '/charts'}
 	  ]
   	}
   },

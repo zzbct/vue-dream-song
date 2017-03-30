@@ -15,7 +15,6 @@
    	 }
    	 &-lock {
    	 	position: relative;
-   	 	color: #ce3d3e;
    	 	&:after {
    	 		content: "";
    	 		position: absolute;
@@ -25,13 +24,16 @@
    	 		height: 0.2em;
    	 		background-color: #ce3d3e;
    	 	}
+         a {
+            color: #ce3d3e;
+         }
    	 }
    }
 </style>
 <template>
    <div class="tc-navbar">
    	  <div v-for='item in navs' :class="['tc-navbar-'+item.state]">
-   	     {{item.value}}
+   	     <router-link :to=item.name>{{item.value}}</router-link>
    	  </div>
    </div>
 </template>
@@ -40,9 +42,9 @@
    	 name: 'tc-navbar',
    	 props: {
    	   navs: {
-   		 type: Array,
-   		 default: []
+   	     type: Array,
+   	     default: []
    	   }
-     }
+   	 }
    }
 </script>

@@ -7,7 +7,7 @@ import store from './muStore'
 
 import '../src/assets/reset.css'
 import '../src/assets/style.css'
-
+import '../src/assets/special.css'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
