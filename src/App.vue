@@ -11,5 +11,7 @@ export default {
 <style>
   #app{
     padding: 1em;
+    width: 37em;
+    margin: 0 auto;
   }
 </style>
