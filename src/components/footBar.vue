@@ -13,7 +13,7 @@
 		    align-items: center;
 			img {
 				width: 1.5em;
-				height: 100%;
+				height: 1.5em;
 				margin-right: 0.5em;
 			}
 			&-name {

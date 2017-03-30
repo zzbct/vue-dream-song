@@ -2,7 +2,6 @@
    .tc-navbar {
    	 height: 2em;
    	 line-height: 2em;
-   	 padding: 0 0.5em;
    	 display: flex;
    	 justify-content: space-around;
    	 align-items: center;
