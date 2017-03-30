@@ -11,7 +11,7 @@
    	 	flex: 1;
    	 	height: 100%;
    	 	text-align: center;
-   	 	font-size: 0.6em;
+   	 	font-size: 0.7em;
    	 }
    	 &-lock {
    	 	position: relative;
