@@ -5,7 +5,7 @@
    	 display: flex;
    	 justify-content: space-around;
    	 align-items: center;
-   	 color: gray;
+   	 color: #666;
    	 div {
    	 	flex: 1;
    	 	height: 100%;

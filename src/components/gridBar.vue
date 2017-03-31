@@ -2,11 +2,12 @@
 <style lang="less">
    .tc-gridbar {
      display: flex;
-	 justify-content: space-between;
+	 justify-content: start;
 	 flex-wrap: wrap;
 	 &-list {
+	   box-sizing: border-box;
 	   margin-bottom: 1em;
-	   padding-left: 1em;
+	   padding-right: 8px;
 	   &-unit {
 	   	 position: relative;
 	   	 width: 7em;
@@ -14,6 +15,9 @@
 	   	 img {
 	   	   width: 100%;
 	   	   height: 100%;
+	   	   &:hover {
+	   	   	cursor: pointer;
+	   	   }
 	   	 }
 	   	 &-data {
 	   	   position: absolute;
@@ -38,7 +42,7 @@
 </style>
 <template>
    <div class="tc-gridbar">
-	  <div class="tc-gridbar-list" v-for="list in lists">
+	  <div @click="skipTo" class="tc-gridbar-list" v-for="list in lists">
 	    <div class="tc-gridbar-list-unit">
 	    	<img :src="list.path">
 	    	<div class="tc-gridbar-list-unit-data">
@@ -90,6 +94,11 @@
 						details: '入耳便喜欢上的英文歌'
 					}
 				]
+			}
+		},
+		methods: {
+			skipTo () {
+				this.$router.push({ path: 'second/listInfo' });
 			}
 		}
 	}
