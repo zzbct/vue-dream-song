@@ -7,11 +7,14 @@
 	 </topbar>
 	 <navbar :navs="navs"></navbar>
 	 <router-view></router-view>
+	 <!-- 底部音乐播放状态 -->
+	 <footbar></footbar>
    </div>
 </template>
 <script>
 import topbar from '../components/topBar'
 import navbar from '../components/navBar'
+import footbar from '../components/footBar'
 export default {
   data () {
   	return {
@@ -30,7 +33,8 @@ export default {
   },
   components: {
 	topbar,
-	navbar
+	navbar,
+	footbar
   }
 }
 </script>
