@@ -31,7 +31,7 @@
 </style>
 <template>
    <div class="tc-navbar">
-   	  <div v-for='item in navs' :class="['tc-navbar-'+item.state]">
+   	  <div @click="splitState(item)" v-for='item in navs' :class="['tc-navbar-'+item.state]">
    	     <router-link :to=item.name>{{item.value}}</router-link>
    	  </div>
    </div>
@@ -44,6 +44,14 @@
    	     type: Array,
    	     default: []
    	   }
-   	 }
+   	 },
+       methods: {
+         splitState (property) {
+           for(let unit of this.navs){
+             unit.state = 'active';
+           }
+           property.state = 'lock';
+         }
+       }
    }
 </script>
