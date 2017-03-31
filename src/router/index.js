@@ -26,6 +26,10 @@ export default new Router({
       		component: require('../views/charts')
       	}
       ]
+    },
+    {
+      path: '/second/listInfo',
+      component: require('../views/listInfo.vue')
     }
   ]
 })
