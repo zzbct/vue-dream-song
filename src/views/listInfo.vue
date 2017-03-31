@@ -3,15 +3,18 @@
     <div>
        <view-control>歌单</view-control>
 	   <view-choose>播放全部</view-choose>
+	   <view-list></view-list>
     </div>
 </template>
 <script>
    import viewControl from '../components/listInfo/viewControl'
-   import viewChoose from '../components/listInfo/viewChoose.vue'
+   import viewChoose from '../components/listInfo/viewChoose'
+   import viewList from '../components/listInfo/viewList'
    export default {
    	 components: {
    	 	viewControl,
-   	 	viewChoose
+   	 	viewChoose,
+   	 	viewList
    	 }
    }
 </script>
