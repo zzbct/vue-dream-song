@@ -30,7 +30,7 @@
 			<img :src='path'>
 		</div>
 		<div class="tc-magiclamp-control">
-			<div v-for="i in 6" :class="i==pos?'tc-magiclamp-control-lock':'tc-magiclamp-control-active'"></div>
+			<div v-for="i in limit" :class="i==pos?'tc-magiclamp-control-lock':'tc-magiclamp-control-active'"></div>
 		</div>
 	</div>
 </template>
@@ -38,24 +38,38 @@
    export default {
      name: 'tc-magiclamp',
      created () {
-     	this.rotateImg(6)
+     	this.getdata()
      },
 	 data () {
 	   return {
-	   	 path: require('../resource/img/lamp' + 0 + '.jpg'),
-	   	 pos: 0
+	   	 path: '',
+	   	 pos: 0,
+	   	 limit: 0
 	   }
 	 },
 	 methods: {
-	 	//limit---幻灯片张数
-	 	rotateImg (limit) {
+	    //获取图片url
+	    getdata: function() {
+	      let vm =this;
+      	  vm.$http.get('img')
+      	    .then(function (response) {
+      	       vm.path = response.data[vm.pos++].picUrl
+      	  	   vm.rotateImg(response.data)
+      	    })
+      	   .catch(function (response) {
+      	  	  console.log(response)
+      	   });
+      	},
+        //limit---幻灯片张数
+	 	rotateImg (data) {
 	 	  let vm = this;
+	 	  vm.limit = data.length;
  	  	  setInterval(function(){
- 	  	    if(vm.pos==limit) vm.pos=0
- 	  	  	vm.path = require('../resource/img/lamp' + vm.pos + '.jpg')
- 	  	  	vm.pos++;
+ 	  	    if(vm.pos == vm.limit) vm.pos=0
+ 	  	  	vm.path = data[vm.pos].picUrl
+ 	  	  	vm.pos++
  	  	  },3000)
-	    }
+	    },
 	 }
    }
 </script>
