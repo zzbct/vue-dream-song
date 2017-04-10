@@ -13,5 +13,6 @@ export default {
     padding: 1em;
     width: 37em;
     margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
   }
 </style>

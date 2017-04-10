@@ -3,9 +3,9 @@
    .tc-shiftbar {
      padding: 1em 0;
      &-left {
-          display: inline-block;
+      display: inline-block;
      	height: 2em;
-          margin-bottom: 0.8em;
+      margin-bottom: 0.8em;
      	padding: 0 0.8em;
      	box-sizing: border-box;
      	background: none;
@@ -14,8 +14,11 @@
      	font-size: 0.7em;
      	line-height: 2em;
      	span {
-     		color: #666;
+     		color: #333;
      	}
+      &:hover {
+        background-color: #eee;
+      }
      }
      &-tags {
           font-size: 0.7em;
@@ -26,6 +29,10 @@
           padding: 0 0.8em;
           font-size: 0.7em;
           color: #777;
+          &:hover {
+            cursor: pointer;
+            color: #333;
+          }
           &:after{
                position: absolute;
                content: "";
